@@ -1,5 +1,14 @@
 # react-todo
 
+## 기한
+
+2019/10/05 23:59
+
+## 꼭 들어와주세요
+
+1. 생활코딩 - React 끝까지 [링크](https://www.opentutorials.org/module/4058)
+2. Udemy React 강의 11~23강 (계정정보는 CEOS Developer 슬랙 - 공지사항 채널을 참고!)
+
 ## 실행 방법
 
 ```
