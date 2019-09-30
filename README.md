@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# react-todo
 
-## Available Scripts
+## 실행 방법
 
-In the project directory, you can run:
+```
+npm install
+npm run start
+```
 
-### `npm start`
+- npm install : 필요한 모든 패키지를 설치합니다. 처음 1번만 실행하면 됩니다.
+- npm run start : react 어플리케이션을 브라우저에서 실행합니다.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 미션 설명
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### 프로그램 실행 결과
 
-### `npm test`
+[확인하기](https://react-todo.greatsumini.now.sh/)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 프로그래밍 요구 사항
 
-### `npm run build`
+1. 제공되지 않은 component 파일은 생성하지 않는다.
+2. 모든 스타일링은 styled-components를 이용해서한다.
+3. 프로그램 실행결과와 스타일이 같지 않아도 된다. 언뜻 보기에 비슷한 정도로만 따라해보자!
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 미션 저장소 및 진행 요구 사항
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- 미션은 이 저장소를 fork/clone해 시작한다.
+- clone된 폴더의 README.md의 내용을 모두 지운다.
+- 프로그램 실행 결과 페이지를 보고, 만들어야 할 기능들을 README.md에 정리해본다.
+- 각 Component별로 props, state를 정리해 추가한다.
+- 각 Component 작성을 완료할 때마다 git에 commit한다.
+- [스터디 과제제출](https://github.com/CEOS-Developers/react-profile/blob/master/docs/how-to-submit/README.md) 문서를 참고해 미션을 제출한다.
