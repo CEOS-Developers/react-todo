@@ -22,10 +22,19 @@ class Todo extends Component {
       todoList: []
     };
   }
+  handleClick = index => {
+    let newTodoList = Array.from(this.state.todoList);
+    newTodoList.splice(index, 1);
+    this.setState({
+      todoList: newTodoList
+    });
+  };
   getTodo() {
     let index = 0;
     const list = this.state.todoList.map(content => {
-      return <TodoCard index={index++} text={content} />;
+      return (
+        <TodoCard index={index++} text={content} onClick={this.handleClick} />
+      );
     });
     return list;
   }

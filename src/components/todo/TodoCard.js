@@ -12,9 +12,13 @@ const Span = styled.span`
 `;
 // props : index, text, onClick
 class TodoCard extends Component {
+  handleClick = e => {
+    e.preventDefault();
+    this.props.onClick(this.props.index);
+  };
   render() {
     return (
-      <Span>
+      <Span onClick={this.handleClick}>
         {this.props.index + 1}.{this.props.text}
       </Span>
     );
