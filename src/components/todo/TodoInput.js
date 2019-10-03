@@ -13,17 +13,36 @@ const Button = styled.button`
 `;
 // 힌트 : Row, Input, Button
 class TodoInput extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      content: ""
+    };
+  }
+  handleChange = e => {
+    this.setState({
+      content: e.target.value
+    });
+  };
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.onSubmit(this.state.content);
+    this.setState({
+      content: ""
+    });
+  };
   render() {
     return (
-      <form
-        onSubmit={e => {
-          e.preventDefault();
-          this.props.onSubmit(e.target.content.value);
-        }}
-      >
+      <form onSubmit={this.handleSubmit}>
         <Row>
-          <input name="content" type="text" />
-          <Button>ADD</Button>
+          <input
+            type="text"
+            name="content"
+            placeholder="TODO를 입력하세요"
+            value={this.state.content}
+            onChange={this.handleChange}
+          />
+          <Button type="submit">ADD</Button>
         </Row>
       </form>
     );
