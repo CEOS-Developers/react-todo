@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+//import styled from "styled-components";
 
 // props : index, text, onClick
 class TodoCard extends Component {

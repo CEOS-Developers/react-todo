@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+//import styled from "styled-components";
 
-import TodoInput from './TodoInput';
-import TodoCard from './TodoCard';
+import TodoInput from "./TodoInput";
+import TodoCard from "./TodoCard";
 
 class Todo extends Component {
   constructor(props) {
@@ -11,9 +11,20 @@ class Todo extends Component {
       todoList: []
     };
   }
-
   render() {
-    return <div>화이팅^^</div>;
+    return (
+      <div>
+        <TodoInput
+          onSubmit={content => {
+            const updateList = this.state.todoList.concat(content);
+            this.setState({
+              todoList: updateList
+            });
+          }}
+        ></TodoInput>
+        <TodoCard></TodoCard>
+      </div>
+    );
   }
 }
 
