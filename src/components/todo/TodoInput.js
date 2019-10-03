@@ -11,7 +11,7 @@ const Button = styled.button`
   background-color: #207a26;
   color: white;
 `;
-// 힌트 : Row, Input, Button
+
 class TodoInput extends Component {
   constructor(props) {
     super(props);

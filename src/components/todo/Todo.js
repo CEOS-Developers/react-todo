@@ -31,30 +31,33 @@ class Todo extends Component {
   };
   getTodo() {
     let index = 0;
-    const list = this.state.todoList.map(content => {
-      return (
-        <TodoCard index={index++} text={content} onClick={this.handleClick} />
-      );
-    });
-    return list;
+    if (this.state.todoList.length === 0) {
+      return "표시할 TODO가 없어요!";
+    } else {
+      const list = this.state.todoList.map(content => {
+        return (
+          <TodoCard index={index++} text={content} onClick={this.handleClick} />
+        );
+      });
+      return list;
+    }
   }
   isEmpty(content) {
     return content === "" ? true : false;
   }
+  handleSubmit = content => {
+    if (this.isEmpty(content)) alert("TODO를 입력하고 ADD 하세요!");
+    else {
+      const updateList = this.state.todoList.concat(content);
+      this.setState({
+        todoList: updateList
+      });
+    }
+  };
   render() {
     return (
       <Div>
-        <TodoInput
-          onSubmit={content => {
-            if (this.isEmpty(content)) alert("TODO를 입력하고 ADD 하세요!");
-            else {
-              const updateList = this.state.todoList.concat(content);
-              this.setState({
-                todoList: updateList
-              });
-            }
-          }}
-        />
+        <TodoInput onSubmit={this.handleSubmit} />
         {this.getTodo()}
       </Div>
     );

@@ -10,7 +10,7 @@ const Span = styled.span`
   padding: 0.8rem;
   border-radius:1rem;
 `;
-// props : index, text, onClick
+
 class TodoCard extends Component {
   handleClick = e => {
     e.preventDefault();
