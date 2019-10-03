@@ -29,15 +29,21 @@ class Todo extends Component {
     });
     return list;
   }
+  isEmpty(content) {
+    return content === "" ? true : false;
+  }
   render() {
     return (
       <Div>
         <TodoInput
           onSubmit={content => {
-            const updateList = this.state.todoList.concat(content);
-            this.setState({
-              todoList: updateList
-            });
+            if (this.isEmpty(content)) alert("TODO를 입력하고 ADD 하세요!");
+            else {
+              const updateList = this.state.todoList.concat(content);
+              this.setState({
+                todoList: updateList
+              });
+            }
           }}
         />
         {this.getTodo()}
