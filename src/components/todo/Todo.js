@@ -6,13 +6,13 @@ import TodoCard from "./TodoCard";
 
 const Div = styled.div`
   background-color: #def2a7;
-  margin: 0 4rem;
-  padding: 2rem 0;
+  margin: 0 10rem;
+  padding: 5rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 1rem;
+  border-radius: 2rem;
 `;
 
 class Todo extends Component {

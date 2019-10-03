@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 const Span = styled.span`
-  width:80%
+  width:70%
   background-color:#207A26;
   margin-bottom: 1rem;
   font-size: 1.5rem;
