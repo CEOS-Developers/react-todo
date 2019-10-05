@@ -14,10 +14,12 @@ class TodoInput extends Component {
       <form name="addListForm"
         onSubmit={function (e) {
           e.preventDefault();
-          if (e.target.todo.value == "")
+          if (e.target.todo.value === "")
             alert("TODO를 입력하고 ADD하세요");
-          else
+          else{
             this.props.onSubmit(e.target.todo.value);
+            e.target.todo.value = null;
+          }
         }.bind(this)}
       >
         <Row>
