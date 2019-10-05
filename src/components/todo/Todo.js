@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { TodoInput } from './TodoInput.js';
 import { TodoCard } from './TodoCard.js';
 
-const Card = styled.div`
+const Container = styled.div`
     display:block;
     margin:0px auto;
     border-radius: 25px;
@@ -24,7 +24,7 @@ class Todo extends Component {
   render() {
 
     return (
-      <Card>
+      <Container>
         <TodoInput onSubmit={
           function (content) {
             if (content === '') { //아무 것도 입력하지 않았을 때
@@ -49,7 +49,7 @@ class Todo extends Component {
               todoList: temp
             }); //react에게 state의 변경사항 알림
           }.bind(this)} />
-      </Card>
+      </Container>
     );
   }
 }
