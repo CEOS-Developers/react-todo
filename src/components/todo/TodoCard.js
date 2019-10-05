@@ -16,6 +16,7 @@ class TodoCard extends Component {
     e.preventDefault();
     this.props.onClick(this.props.index);
   };
+
   render() {
     return (
       <Span onClick={this.handleClick}>

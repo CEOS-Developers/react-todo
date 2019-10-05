@@ -22,6 +22,7 @@ class Todo extends Component {
       todoList: []
     };
   }
+
   handleClick = index => {
     let newTodoList = Array.from(this.state.todoList);
     newTodoList.splice(index, 1);
@@ -29,7 +30,8 @@ class Todo extends Component {
       todoList: newTodoList
     });
   };
-  getTodo() {
+
+  getTodo = () => {
     let index = 0;
     if (this.state.todoList.length === 0) {
       return "표시할 TODO가 없어요!";
@@ -41,19 +43,19 @@ class Todo extends Component {
       });
       return list;
     }
-  }
-  isEmpty(content) {
-    return content === "" ? true : false;
-  }
+  };
+
   handleSubmit = content => {
-    if (this.isEmpty(content)) alert("TODO를 입력하고 ADD 하세요!");
-    else {
+    if (content === "") {
+      alert("TODO를 입력하고 ADD 하세요!");
+    } else {
       const updateList = this.state.todoList.concat(content);
       this.setState({
         todoList: updateList
       });
     }
   };
+
   render() {
     return (
       <Div>

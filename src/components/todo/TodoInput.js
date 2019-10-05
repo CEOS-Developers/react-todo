@@ -19,11 +19,13 @@ class TodoInput extends Component {
       content: ""
     };
   }
+
   handleChange = e => {
     this.setState({
       content: e.target.value
     });
   };
+
   handleSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state.content);
@@ -31,6 +33,7 @@ class TodoInput extends Component {
       content: ""
     });
   };
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
