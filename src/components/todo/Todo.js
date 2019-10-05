@@ -24,22 +24,23 @@ class Todo extends Component {
   }
 
   getTodo() {
-    let index = 0;
-    let todo = "";
-
     if (this.state.todoList.length === 0) {
       return "표시할 TODO가 없어요!";
     }
     else {
-      let _todoList = this.state.todoList;
+      let showTodoList = null;
+      let index = 0;
       while (index < this.state.todoList.length) {
-        _todoList.concat(<TodoCard index={++index} todo={todo} onClick={this.onClick} />)
+        let _todo = this.state.todoList[index].value;
+        console.log(this.state.todoList, index);
+        showTodoList.push(<TodoCard index={++index} todo={_todo} onClick={this.onClick} />);
+        index++;
       }
-      return _todoList;
+      return showTodoList;
     }
   }
 
-  onSubmit(_todo){
+  onSubmit(_todo) {
     let newTodoList = Array.from(this.state.todoList);
     newTodoList.push(_todo);
     this.setState({
