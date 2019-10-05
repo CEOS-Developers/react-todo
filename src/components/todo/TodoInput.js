@@ -29,9 +29,9 @@ class TodoInput extends Component {
             e.target.content.value = null; //다시 새로운 내용 입력할 수 있도록 null 대입
           }.bind(this)}>
 
-          <input type="text" name="content" placeholder="TODO를 입력하세요."></input>
+          <input type="text" name="content" placeholder="TODO를 입력하세요." />
 
-          <AddButton type="submit" value="ADD"></AddButton>
+          <AddButton type="submit" value="ADD" />
         </form>
       </InputWrapper>
     );
