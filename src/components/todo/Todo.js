@@ -27,7 +27,7 @@ class Todo extends Component {
       <Card>
         <TodoInput onSubmit={
           function (content) {
-            if(content==''){ //아무 것도 입력하지 않았을 때
+            if(content===''){ //아무 것도 입력하지 않았을 때
               alert('TODO를 입력하고 ADD 하세요!');
             }
             else{ //입력값이 들어왔을 때
