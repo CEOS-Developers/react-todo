@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import TodoInput from './TodoInput';
@@ -13,7 +13,9 @@ class Todo extends Component {
   }
 
   render() {
-    return <div>화이팅^^</div>;
+    return (
+      <TodoInput></TodoInput>
+    );
   }
 }
 
