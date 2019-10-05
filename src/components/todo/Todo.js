@@ -31,10 +31,10 @@ class Todo extends Component {
               alert('TODO를 입력하고 ADD 하세요!');
             }
             else { //입력값이 들어왔을 때
-              let list = [...this.state.todoList, content]; //기존 배열에 입력값 추가한 새 배열 생성
+              let temp = [...this.state.todoList, content]; //기존 배열에 입력값 추가한 새 배열 생성
               
               this.setState({
-                todoList: list
+                todoList: temp
               }); //react에게 state의 변경사항 알림
             }
           }.bind(this)
@@ -42,11 +42,11 @@ class Todo extends Component {
 
         <TodoCard data={this.state.todoList}
           onClicked={function (i) {
-            let list = [...this.state.todoList]; //기본 배열과 값이 같은 새 배열 생성
-            list.splice(i, 1); //클릭한 내용만 삭제
+            let temp = [...this.state.todoList]; //기본 배열과 값이 같은 새 배열 생성
+            temp.splice(i, 1); //클릭한 내용만 삭제
 
             this.setState({
-              todoList: list
+              todoList: temp
             }); //react에게 state의 변경사항 알림
           }.bind(this)} />
       </Card>
