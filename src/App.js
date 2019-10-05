@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
-import {Intro} from './components/Intro.js';
-import {Todo} from './components/todo/Todo.js';
+import { Intro } from './components/Intro.js';
+import { Todo } from './components/todo/Todo.js';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -27,4 +27,4 @@ class App extends Component {
   }
 }
 
-export {App};
+export { App };

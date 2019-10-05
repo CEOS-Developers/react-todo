@@ -25,7 +25,7 @@ const ListWrapper = styled.div`
 class TodoCard extends Component {
 
   render() {
-    let result=<div>표시할 TODO가 없어요!</div>; //처음에 뜨도록
+    let result = <div>표시할 TODO가 없어요!</div>; //처음에 뜨도록
     let list = this.props.data;
     let liList = [];
     for (let i in list) {
@@ -33,7 +33,7 @@ class TodoCard extends Component {
         this.props.onClicked(i); // props의 onClicked를 핸들러에 넣어줌.
       }.bind(this)}>{Number(i) + 1}. {list[i]}</List>);
     }
-    if(liList.length>0){result=liList}; //배열에 값이 들어왔을 때에 그것을 출력하도록
+    if (liList.length > 0) { result = liList }; //배열에 값이 들어왔을 때에 그것을 출력하도록
 
     return (
       <ListWrapper>
@@ -43,4 +43,4 @@ class TodoCard extends Component {
   }
 }
 
-export {TodoCard};
+export { TodoCard };

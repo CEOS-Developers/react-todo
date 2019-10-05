@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import {TodoInput} from './TodoInput.js';
-import {TodoCard} from './TodoCard.js';
+import { TodoInput } from './TodoInput.js';
+import { TodoCard } from './TodoCard.js';
 
 const Card = styled.div`
     display:block;
@@ -27,10 +27,10 @@ class Todo extends Component {
       <Card>
         <TodoInput onSubmit={
           function (content) {
-            if(content===''){ //아무 것도 입력하지 않았을 때
+            if (content === '') { //아무 것도 입력하지 않았을 때
               alert('TODO를 입력하고 ADD 하세요!');
             }
-            else{ //입력값이 들어왔을 때
+            else { //입력값이 들어왔을 때
               let list = [...this.state.todoList, content]; //기존 배열에 입력값 추가한 새 배열 생성
               this.setState({
                 todoList: list
@@ -51,4 +51,4 @@ class Todo extends Component {
   }
 }
 
-export {Todo};
+export { Todo };
