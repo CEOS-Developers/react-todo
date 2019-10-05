@@ -4,7 +4,13 @@ import styled from 'styled-components';
 import TodoInput from './TodoInput';
 import TodoCard from './TodoCard';
 
-const Div = styled.div``
+const Div = styled.div`
+  width: 80%;
+  background-color: rgb(222, 242, 167);
+  margin: 0px auto;
+  padding: 5rem;
+  border-radius: 2rem;
+`
 
 class Todo extends Component {
   constructor(props) {
@@ -30,10 +36,12 @@ class Todo extends Component {
     else {
       let showTodoList = null;
       let index = 0;
-      while (index < this.state.todoList.length) {
+      for (let index = 0; index < this.state.todoList.length; index++) {
         let _todo = this.state.todoList[index].value;
         console.log(this.state.todoList, index);
-        showTodoList.push(<TodoCard index={++index} todo={_todo} onClick={this.onClick} />);
+        //push가 반복문 첫번째 돌 때 두번 호출되는듯?
+        showTodoList.push(<TodoCard index={index} todo={this.state.todoList[index].value} onClick={this.onClick} />);
+        console.log(this.state.todoList, index);
         index++;
       }
       return showTodoList;
