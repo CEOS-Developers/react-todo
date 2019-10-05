@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const InputWrapper = styled.div`
+const InputWrapper = styled.form`
     display:flex;
     justify-content:center;
     border-radius: 1.5rem;
@@ -18,8 +18,7 @@ const AddButton = styled.input`
 class TodoInput extends Component {
   render() {
     return (
-      <InputWrapper>
-        <form action="/create_process" method="post"
+        <InputWrapper action="/create_process" method="post"
           onSubmit={function (e) {
             e.preventDefault(); //form 제출했을 때 redirect 방지
             
@@ -32,8 +31,7 @@ class TodoInput extends Component {
           <input type="text" name="content" placeholder="TODO를 입력하세요." />
 
           <AddButton type="submit" value="ADD" />
-        </form>
-      </InputWrapper>
+        </InputWrapper>
     );
   }
 }
