@@ -4,8 +4,8 @@ import styled from 'styled-components';
 const InputWrapper = styled.div`
     display:flex;
     justify-content:center;
-    border-radius: 25px;
-    padding:50px;
+    border-radius: 1.5rem;
+    padding:5rem;
     background-color:#dcffa8;
 `
 
