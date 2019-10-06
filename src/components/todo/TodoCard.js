@@ -30,9 +30,9 @@ class TodoCard extends Component {
 
   render() {
     let result = null;
-    let todoList = this.props.data;
-    let toDo = todoList.map((v,i) => {
-      return <List key={i} onClick={this.deleteHandler}> {Number(i) + 1}. {v}</List>
+    const todoList = this.props.data;
+    const toDo = todoList.map((content,index) => {
+      return <List key={index} onClick={this.deleteHandler}> {Number(index) + 1}. {content}</List>
     });
 
     {
