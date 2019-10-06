@@ -24,23 +24,24 @@ const ListWrapper = styled.div`
 // props : index, text, onClick
 class TodoCard extends Component {
 
-  deleteHandler = (e, i) => {
+  deleteHandler = (e,i) => {
     this.props.onClicked(i);
   }
 
   render() {
-    let result = <div>표시할 TODO가 없어요!</div>; //처음에 뜨도록
+    let result = null;
     let todoList = this.props.data;
     let toDo = [];
 
     for (let i in todoList) {
       toDo.push(<List key={i} onClick={this.deleteHandler}>
-        {Number(i) + 1}. {todoList[i]}</List>)
+      {Number(i) + 1}. {todoList[i]}</List>)
     }
 
-    if (toDo.length > 0) {
-      result = toDo
-    } //배열에 값이 들어왔을 때에 그것을 출력하도록
+    {toDo.length === 0 &&
+       (result = <div>표시할 TODO가 없어요!</div>)}
+    {toDo.length !== 0 &&
+       (result = toDo)}
 
     return (
       <ListWrapper>
