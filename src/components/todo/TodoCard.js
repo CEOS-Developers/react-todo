@@ -31,12 +31,9 @@ class TodoCard extends Component {
   render() {
     let result = null;
     let todoList = this.props.data;
-    let toDo = [];
-
-    for (let i in todoList) {
-      toDo.push(<List key={i} onClick={this.deleteHandler}>
-        {Number(i) + 1}. {todoList[i]}</List>)
-    }
+    let toDo = todoList.map((v,i) => {
+      return <List key={i} onClick={this.deleteHandler}> {Number(i) + 1}. {v}</List>
+    });
 
     {
     toDo.length === 0 &&
