@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { TodoInput } from './TodoInput.js';
-import { TodoCard } from './TodoCard.js';
+import TodoInput from './TodoInput';
+import TodoCard from './TodoCard';
 
 const Container = styled.div`
     display:block;
@@ -20,6 +20,7 @@ class Todo extends Component {
       todoList: []
     };
   }
+
 
   getInput = content => {
     if (content === '') { //아무 것도 입력하지 않았을 때
@@ -54,4 +55,4 @@ class Todo extends Component {
   }
 }
 
-export { Todo };
+export default Todo;

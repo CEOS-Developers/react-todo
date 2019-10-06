@@ -16,7 +16,7 @@ const AddButton = styled.input`
 
 // 힌트 : Row, Input, Button
 class TodoInput extends Component {
-  
+
   inputHandler = e => {
     e.preventDefault(); //form 제출했을 때 redirect 방지
 
@@ -36,4 +36,4 @@ class TodoInput extends Component {
   }
 }
 
-export { TodoInput };
+export default TodoInput;

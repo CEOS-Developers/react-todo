@@ -24,7 +24,7 @@ const ListWrapper = styled.div`
 // props : index, text, onClick
 class TodoCard extends Component {
 
-  deleteHandler = (e,i) => {
+  deleteHandler = (e, i) => {
     this.props.onClicked(i);
   }
 
@@ -35,13 +35,17 @@ class TodoCard extends Component {
 
     for (let i in todoList) {
       toDo.push(<List key={i} onClick={this.deleteHandler}>
-      {Number(i) + 1}. {todoList[i]}</List>)
+        {Number(i) + 1}. {todoList[i]}</List>)
     }
 
-    {toDo.length === 0 &&
-       (result = <div>표시할 TODO가 없어요!</div>)}
-    {toDo.length !== 0 &&
-       (result = toDo)}
+    {
+    toDo.length === 0 &&
+      (result = <div>표시할 TODO가 없어요!</div>)
+    }
+    {
+    toDo.length !== 0 &&
+      (result = toDo)
+    }
 
     return (
       <ListWrapper>
@@ -51,4 +55,4 @@ class TodoCard extends Component {
   }
 }
 
-export { TodoCard };
+export default TodoCard;

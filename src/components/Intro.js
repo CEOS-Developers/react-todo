@@ -22,4 +22,4 @@ class Intro extends Component {
   }
 }
 
-export { Intro };
+export default Intro;
