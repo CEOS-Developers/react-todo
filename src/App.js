@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import styled, {createGlobalStyle} from 'styled-components';
+import React, { Component } from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
 
 import Intro from './components/Intro';
 import Todo from './components/todo/Todo';
