@@ -15,11 +15,11 @@ class TodoCard extends Component {
 
   render() {
     return (
-      <Div onClick={function (e) {
-          this.props.onClick(this.props.index);
-        }}>
-          {this.props.index + 1}. {this.props.todo}
-        </Div>
+      <Div onClick={() => {
+        this.props.onClick(this.props.index);
+      }}>
+        {this.props.index + 1}. {this.props.todo}
+      </Div>
     )
   }
 }
