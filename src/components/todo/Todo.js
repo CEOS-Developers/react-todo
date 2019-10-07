@@ -21,9 +21,7 @@ class Todo extends Component {
   }
 
   onClick = (index) => {
-    let newTodoList = Array.from(this.state.todoList)
-    newTodoList.splice(index, 1);
-    this.setState({ todoList: newTodoList });
+    this.setState({ todoList: [...this.state.todoList.slice(0,index),...this.state.todoList.slice(index+1)] });
   }
 
   getTodo = () => {
@@ -31,10 +29,9 @@ class Todo extends Component {
       return "표시할 TODO가 없어요!";
     }
 
-    let showTodoList = this.state.todoList.map((_todo, index) => {
+    return this.state.todoList.map((_todo, index) => {
       return <TodoCard index={index} todo={_todo} onClick={this.onClick}/>;
     });
-    return showTodoList;
   }
 
   onSubmit = (_todo) => {
