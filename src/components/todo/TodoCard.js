@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const Div = styled.div`
+const CardWrapper = styled.div`
   background-color: rgb(32, 122, 38);
   color: white;
   font-size: 1.5rem;
@@ -15,11 +15,11 @@ class TodoCard extends Component {
 
   render() {
     return (
-      <Div onClick={() => {
+      <CardWrapper onClick={() => {
         this.props.onClick(this.props.index);
       }}>
         {this.props.index + 1}. {this.props.todo}
-      </Div>
+      </CardWrapper>
     )
   }
 }

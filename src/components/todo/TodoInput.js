@@ -11,13 +11,16 @@ const Button = styled.input`
   font-size: 1.5rem;
   border-radius: 0.5rem;
 `
+const Form = styled.form``
+const Input = styled.input``
+
 
 // 힌트 : Row, Input, Button
 class TodoInput extends Component {
 
   render() {
     return (
-      <form name="addListForm"
+      <Form name="addListForm"
         onSubmit={(e) => {
           e.preventDefault();
           if (e.target.todo.value === "")
@@ -30,7 +33,7 @@ class TodoInput extends Component {
         }
       >
         <Row>
-          <input
+          <Input
             type="text"
             name="todo"
             placeholder="TODO를 입력하세요" />
@@ -39,7 +42,7 @@ class TodoInput extends Component {
             name="addButton"
             value="ADD" />
         </Row>
-      </form>
+      </Form>
     );
   }
 }

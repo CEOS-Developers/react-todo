@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import TodoInput from './TodoInput';
 import TodoCard from './TodoCard';
 
-const Div = styled.div`
+const Wrapper = styled.div`
   width: 80%;
   background-color: rgb(222, 242, 167);
   margin: 0px auto;
@@ -21,7 +21,6 @@ class Todo extends Component {
   }
 
   onClick = (index) => {
-    console.log(this.state.todoList)
     let newTodoList = Array.from(this.state.todoList)
     newTodoList.splice(index, 1);
     this.setState({ todoList: newTodoList });
@@ -31,34 +30,25 @@ class Todo extends Component {
     if (this.state.todoList.length === 0) {
       return "표시할 TODO가 없어요!";
     }
-    else {
-      let showTodoList = [];
-      for (let index = 0; index < this.state.todoList.length; index++) {
-        showTodoList.push(
-          <TodoCard
-            index={index}
-            todo={this.state.todoList[index]}
-            onClick={this.onClick}
-          />);
-      }
-      return showTodoList;
-    }
+
+    let showTodoList = this.state.todoList.map((_todo, index) => {
+      return <TodoCard index={index} todo={_todo} onClick={this.onClick}/>;
+    });
+    return showTodoList;
   }
 
   onSubmit = (_todo) => {
-    let newTodoList = Array.from(this.state.todoList);
-    newTodoList.push(_todo);
     this.setState({
-      todoList: newTodoList
+      todoList: [...this.state.todoList,_todo]
     });
   }
 
   render() {
     return (
-      <Div>
+      <Wrapper>
         <TodoInput onSubmit={this.onSubmit}></TodoInput>
         {this.getTodo()}
-      </Div>
+      </Wrapper>
     );
   }
 }
