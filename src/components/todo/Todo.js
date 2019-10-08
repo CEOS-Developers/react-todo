@@ -4,14 +4,6 @@ import styled from 'styled-components';
 import TodoInput from './TodoInput';
 import TodoCard from './TodoCard';
 
-const Wrapper = styled.div`
-  width: 80%;
-  background-color: rgb(222, 242, 167);
-  margin: 0px auto;
-  padding: 5rem;
-  border-radius: 2rem;
-`
-
 class Todo extends Component {
   constructor(props) {
     super(props);
@@ -20,7 +12,7 @@ class Todo extends Component {
     };
   }
 
-  onClick = (index) => {
+  handleClick = (index) => {
     this.setState({ todoList: [...this.state.todoList.slice(0,index),...this.state.todoList.slice(index+1)] });
   }
 
@@ -30,11 +22,11 @@ class Todo extends Component {
     }
 
     return this.state.todoList.map((_todo, index) => {
-      return <TodoCard index={index} todo={_todo} onClick={this.onClick}/>;
+      return <TodoCard index={index} todo={_todo} onClick={this.handleClick}/>;
     });
   }
 
-  onSubmit = (_todo) => {
+  handleSubmit = (_todo) => {
     this.setState({
       todoList: [...this.state.todoList,_todo]
     });
@@ -43,11 +35,19 @@ class Todo extends Component {
   render() {
     return (
       <Wrapper>
-        <TodoInput onSubmit={this.onSubmit}></TodoInput>
+        <TodoInput onSubmit={this.handleSubmit}></TodoInput>
         {this.getTodo()}
       </Wrapper>
     );
   }
 }
+
+const Wrapper = styled.div`
+  width: 80%;
+  background-color: rgb(222, 242, 167);
+  margin: 0px auto;
+  padding: 5rem;
+  border-radius: 2rem;
+`
 
 export default Todo;
