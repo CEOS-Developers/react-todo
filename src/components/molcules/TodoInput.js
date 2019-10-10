@@ -1,16 +1,6 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-
-const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 2rem;
-`;
-
-const Button = styled.button`
-  background-color: #207a26;
-  color: white;
-`;
+import Row from "../atoms/Row";
+import Button from "../atoms/Button";
 
 class TodoInput extends Component {
   constructor(props) {

@@ -1,19 +1,8 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 
-import TodoInput from "./TodoInput";
-import TodoCard from "./TodoCard";
-
-const Div = styled.div`
-  background-color: #def2a7;
-  margin: 0 10rem;
-  padding: 5rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 2rem;
-`;
+import Col from "../atoms/Col";
+import TodoInput from "../molcules/TodoInput";
+import TodoCard from "../molcules/TodoCard";
 
 class Todo extends Component {
   constructor(props) {
@@ -33,23 +22,23 @@ class Todo extends Component {
 
   getTodo = () => {
     let index = 0;
-    if (this.state.todoList.length === 0) {
+    const { todoList } = this.state;
+    if (todoList.length === 0) {
       return "표시할 TODO가 없어요!";
     } else {
-      const list = this.state.todoList.map(content => {
-        return (
-          <TodoCard index={index++} text={content} onClick={this.handleClick} />
-        );
-      });
+      const list = todoList.map(content => (
+        <TodoCard index={index++} text={content} onClick={this.handleClick} />
+      ));
       return list;
     }
   };
 
   handleSubmit = content => {
+    const { todoList } = this.state;
     if (content === "") {
       alert("TODO를 입력하고 ADD 하세요!");
     } else {
-      const updateList = this.state.todoList.concat(content);
+      const updateList = todoList.concat(content);
       this.setState({
         todoList: updateList
       });
@@ -58,10 +47,10 @@ class Todo extends Component {
 
   render() {
     return (
-      <Div>
+      <Col>
         <TodoInput onSubmit={this.handleSubmit} />
         {this.getTodo()}
-      </Div>
+      </Col>
     );
   }
 }
