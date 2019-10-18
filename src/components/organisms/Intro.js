@@ -1,15 +1,7 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
-
-const Header = styled.header``;
-
-const H1 = styled.h1`
-  font-size: 2rem;
-`;
-
-const P = styled.p`
-  font-size: 1rem;
-`;
+import React, { Component } from "react";
+import H1 from "../atoms/H1";
+import P from "../atoms/P";
+import Header from "../atoms/Header";
 
 class Intro extends Component {
   render() {
